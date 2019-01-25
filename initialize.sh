@@ -8,3 +8,6 @@ passwd root
 echo "=== Restart sshd ==="
 systemctl restart sshd
 systemctl status sshd
+echo "=== Update firewall ==="
+(cd firewall && ./setup_firewall.sh)
+echo "=== Finish all! ==="
