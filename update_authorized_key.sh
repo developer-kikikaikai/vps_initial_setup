@@ -7,7 +7,9 @@ echo "=== Update authorized keys in `(cd  ${SSHDIR} &&  pwd)` ==="
 mkdir -p ${SSHDIR}
 
 #regist public key
-sed -i '/^ssh-/d' ${AUTHORIZED_KEYS}
+if [ -e ${AUTHORIZED_KEYS} ]; then
+	sed -i '/^ecdsa-sha2-nistp521/d' ${AUTHORIZED_KEYS}
+fi
 cat ${PUBKEY} >> ${AUTHORIZED_KEYS}
 
 #set permission of ssh files
