@@ -1,0 +1,31 @@
+## What is this?
+
+Initialize setting support script for VPS.
+This is running on DTI ServersMan Entry edition with CentOS simple plan.
+
+So maybe it can be running on CentOS 7.
+
+## 1st, to use this script
+
+Please install git. And you have to update some package to clone code from github.
+Then please do it by following commands:
+
+```
+yum --skip-broken -y update
+yum -y install git
+yum -y update  nss curl libcurl
+git clone https://github.com/developer-kikikaikai/vps_initial_setup.git
+```
+
+## 2nd, after clone code
+
+1. Please create your ssh-keypair by using ssh-keygen
+
+```
+ ssh-keygen -t ecdsa -b 521 -f vps_ssh.pem
+```
+
+And overwrite vps_ssh.pem.pub in repos.
+
+2. Call ./initialize.sh script
+
