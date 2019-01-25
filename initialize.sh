@@ -10,4 +10,6 @@ systemctl restart sshd
 systemctl status sshd
 echo "=== Update firewall ==="
 (cd firewall && ./setup_firewall.sh)
+echo "=== Install extra package ==="
+./extra_pkg.sh
 echo "=== Finish all! ==="
